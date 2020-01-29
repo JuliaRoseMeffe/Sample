@@ -1,0 +1,68 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+{% load static %}
+
+
+{% block app_styles %}
+
+    <link href="{% static "PGG5/styles.css" %}" rel="stylesheet">
+
+    <style>
+        .otree-btn-next {
+            margin: 0px;
+        }
+
+        .form-control {
+            border-color: white;
+        }
+
+        .form-control:focus {
+            border-color: #3500D3;
+        }
+
+        table {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        table td {
+            padding-left: 5vw;
+            padding-right: 5vw;
+        }
+    </style>
+
+{% endblock %}
+
+
+{% block content %}
+ <nav class="navbar fixed-top navbar-dark" style="background-color: #3500D3">
+        <a class="navbar-brand" href="#"><img src="{% static "PGG5/pgg_logo.png" %}" height="30px"
+                                              style="padding-right: 10px">Summary</a>
+        <ul class="nav navbar-nav navbar-right" style="flex-direction: row">
+            <li class="navbar-text" style="padding-right: 10px">
+                Finished
+            </li>
+        </ul>
+    </nav>
+
+    <div style="padding: 30px; text-align: center">
+        This is the end of the experiment. Your earnings are:
+    </div>
+    <table>
+        <tr>
+            <td>Experiment Earnings </td>
+            <td>{{ total_payoff_overall }}</td>
+        </tr>
+        <tr>
+            <td>Your total payment</td>
+            <td>{{ total_payment }}</td>
+        </tr>
+    </table>
+
+<div style="padding: 30px; text-align: center">
+
+        <p>Thank you for participating in this experiment</p>
+   </div>
+
+{% endblock %}
+

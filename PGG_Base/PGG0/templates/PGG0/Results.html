@@ -1,0 +1,47 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+{% load static %}
+
+
+{% block app_styles %}
+
+    <link href="{% static "PGG0/styles.css" %}" rel="stylesheet">
+
+    <style>
+        .otree-btn-next {
+            margin: 0px;
+        }
+
+        .form-control {
+            border-color: white;
+        }
+
+        .form-control:focus {
+            border-color: #3500D3;
+        }
+    </style>
+
+{% endblock %}
+
+
+{% block content %}
+
+  <nav id="navbar-main" class="navbar fixed-top navbar-dark" style="background-color: #3500D3">
+        <a class="navbar-brand" href="#"><img src="{% static "PGG2/pgg_logo.png" %}" height="30px"
+                                              style="padding-right: 10px">Summary</a>
+        <ul class="nav navbar-nav navbar-right" style="flex-direction: row">
+            <li>
+                <button class="btn btn-primary otree-btn-next btn-outline-light" type="submit">Continue</button>
+            </li>
+        </ul>
+    </nav>
+
+
+    <h4 style="margin-top: 20px">Contributions <span style="font-size: small; color: blue; padding-left: 10px">C: contributions, E: earnings</span></h4>
+    {% include "PGG0/ContributionTable.html" %}
+
+    <div style="padding: 30px; text-align: center">
+        Your total payoff is <b>{{ total_payoff }}</b>
+    </div>
+
+{% endblock %}

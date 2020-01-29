@@ -1,0 +1,56 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+{% load static %}
+
+
+{% block app_styles %}
+
+   <link href="{% static "PGG5/styles.css" %}" rel="stylesheet">
+
+    <style>
+        .otree-btn-next {
+            margin: 0px;
+        }
+
+        .form-control {
+            border-color: white;
+        }
+
+        .form-control:focus {
+            border-color: #3500D3;
+        }
+
+        .questions {
+            border: 1px solid #3500D3;
+            width: 40vw;
+            padding: 1px;
+        }
+
+        .input-area textarea {
+            border: 10px solid #3500D3;
+        }
+    </style>
+
+{% endblock %}
+
+
+{% block content %}
+
+    <nav class="navbar fixed-top navbar-dark" style="background-color: #3500D3">
+        <a class="navbar-brand" href="#"><img src="{% static "PGG5/pgg_logo.png" %}" height="30px"
+                                              style="padding-right: 10px">Questionnaire</a>
+        <ul class="nav navbar-nav navbar-right" style="flex-direction: row">
+            <li>
+                <button class="btn btn-primary otree-btn-next btn-outline-light" type="submit">Next</button>
+            </li>
+        </ul>
+    </nav>
+
+
+<p>How did you try to maximize your payout in the rounds? Please explain your strategy: </p>
+<div class="form-control input-area" style="margin-bottom: 50px">{% formfield player.question_7 %}</div>
+<p>Please enter your Prolific ID – it has 24 alphanumeric characters and is needed to correctly allocate the above earnings:</p>
+<div class="form-control input-area" style="margin-bottom: 50px">{% formfield player.prolificID_Input%}</div>
+
+
+{% endblock %}

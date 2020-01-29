@@ -1,0 +1,41 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+{% load static %}
+
+
+{% block app_styles %}
+
+    <link href="{% static "PGG0/styles.css" %}" rel="stylesheet">
+
+    <style>
+        .otree-btn-next {
+            margin: 0px;
+        }
+
+        .form-control {
+            border-color: white;
+        }
+
+        .form-control:focus {
+            border-color: #3500D3;
+        }
+    </style>
+
+{% endblock %}
+
+
+{% block content %}
+
+    <nav class="navbar fixed-top navbar-dark" style="background-color: #3500D3">
+        <a class="navbar-brand" href="#"><img src="{% static "PGG0/pgg_logo.png" %}" height="30px"
+                                              style="padding-right: 10px">Contribute</a>
+        <ul class="nav navbar-nav navbar-right" style="flex-direction: row">
+            <li class="navbar-text" style="padding-right: 10px">
+                <button class="btn btn-primary otree-btn-next btn-outline-light" type="submit">Next</button>
+            </li>
+        </ul>
+    </nav>
+
+    <h4 style="margin-top: 20px"> Please press "Next" to continue to the questionnaire. </h4>
+
+{% endblock %}

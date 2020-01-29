@@ -1,0 +1,68 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+
+{% block styles %}
+
+    <link href="{% static "PGG0/styles.css" %}" rel="stylesheet">
+
+{% endblock %}
+
+
+{% block content %}
+
+    <nav class="navbar fixed-top navbar-dark" style="background-color: #3500D3">
+        <a class="navbar-brand" href="#"><img src="{% static "PGGM_Teaching/pgg_logo.png" %}" height="30px"
+                                              style="padding-right: 10px">Instructions</a>
+        <ul class="nav navbar-nav navbar-right" style="flex-direction: row">
+            <li class="navbar-text" style="padding-right: 10px">
+            </li>
+            <li style="padding-right: 10px">{{ form.contribution }}</li>
+{#            <li>#}
+{#                <button class="btn btn-primary otree-btn-next btn-outline-light" type="submit">Start</button>#}
+{#            </li>#}
+        </ul>
+    </nav>
+
+    <div class="instructions well well-lg">
+<p>
+Thank you for participating in today’s experiment. Please switch off your cell phone, do not talk to other participants, and do not communicate with others using the PC. You have been randomly assigned to a group of 4 people – but will only conduct this experiment by yourself. The members of the group do not change during the experiment. You will not be made aware of the identity of the others in your group (or any other group) at any time – neither will anyone else be made aware of your identity. Everyone in the group receives 20 tokens as an endowment in every round. 20 tokens correspond to $ 0.50 (USD); 1 token corresponds to $ 0.02 (USD). In the experiment you can freely decide how much of this amount to keep for yourself and how much to contribute to the group account. You do that by typing your chosen contribution in the input field in the top right corner on the page and press “Submit”. Everyone in the group will make the same type of decision, and everyone is allowed to contribute any amount between 0 and 20 tokens, only integers. The sum of all contributions will be doubled and the resulting total amount in the group account will then be equally divided among the four persons in the group, i.e. everyone in the group receives 25% of the group account irrespective of this person’s contribution. The share that you receive from the group account will then be added to the amount that you decided to keep for yourself. Note that the group account is always zero after everyone’s shares have been distributed at the end of each round.
+</p>
+<p>
+You will engage in this experiment over 10 rounds. In every round, you and the other group members will receive 20 tokens. All members of the group will make the same type of decision in every round, i.e. you decide how much you will keep for yourself and how much you will contribute to the group account. In each round the contributions will be doubled before the shares are paid out to the group member. The main information is displayed to everyone using the following abbreviations:
+</p>
+
+
+ <table>
+            <tr>
+                <td><b>C</b></td>
+                <td><b><i>Contributions</i></b></td>
+                <td>What everyone has contributed in a given round</td>
+            </tr>
+            <tr>
+                <td><b>E</b></td>
+                <td><b><i>Earnings</i></b></td>
+                <td>What everyone has earned in a given round</td>
+            </tr>
+        </table>
+        <div class="imgBlockStyle">
+            <img src="{% static "PGG0/contribution_input_field.png" %}" width="600">
+        </div>
+
+<p>
+This is the end of the instructions. By pressing the ‘Next’ button we assume you have read and understood the instructions of the experiment. Please do not close the browser at any time. After you have completed the 10 rounds, you will need to complete a questionnaire before you can check out. Your final earnings are your accumulated earnings after round 10, i.e. all the amounts that you decided to keep for yourself plus the returns you received from the group account.
+</p>
+<p>
+As you prepare to start with the experiment, please be patient as others need to finish reading the instructions. It may also take some time to compile data on the server.
+</p>
+<p>
+Please, press ‘Next’ and continue with the experiment.
+</p>
+
+
+
+<button class="otree-btn-next btn btn-primary nextBtnPlacement">Next</button>
+
+    </div>
+
+{% endblock %}
